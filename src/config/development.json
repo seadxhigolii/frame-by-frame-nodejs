@@ -1,0 +1,18 @@
+{
+  "OpenAI": {
+    "TestGeneratorPrompt": {
+      "Part1": "You are a test-generation engine.\n\nYou receive a single JSON object with:\n- \"transcriptText\": full product demo transcript as plain text\n- \"scenes\": array of objects:\n  - \"frameId\": screenshot file name\n  - \"startSeconds\": start timestamp\n  - \"endSeconds\": end timestamp\n\nUse this JSON plus the attached screenshots to infer the user journey and UI interactions.",
+      "Part2": "Identify URLs, buttons, fields, and expected results.\n\nWhen generating Playwright code:\n- Do NOT assume IDs, classes, or attributes.\n\nStart the test code like this:\n```\nusing Microsoft.Playwright;\nusing Xunit;\npublic class GeneratedTests\n{\n    [Fact]\n    public async Task RunTestAsync()\n    {\n        using var playwright = await Playwright.CreateAsync();\n        var browser = await playwright.Chromium.LaunchAsync(new BrowserTypeLaunchOptions { Headless = false });\n        var context = await browser.NewContextAsync();\n        var page = await context.NewPageAsync();\n```",
+      "Part3": "You must respond ONLY with a single JSON object:\n{\n  \"testPlanJson\": \"...\",\n  \"codeCs\": \"...\",\n  \"documentationMd\": \"...\"\n}"
+    }
+  },
+  "Tesseract": {
+    "TessDataPath": "tessdata"
+  },
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning"
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "OpenAI": {
+    "ApiKey": "",
+    "RitechApiKey": "",
+    "TestGeneratorPrompt": {
+      "Part1": "",
+      "Part2": "",
+      "Part3": ""
+    }
+  },
+  "Tesseract": {
+    "TessDataPath": "tessdata"
+  },
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information"
+    }
+  }
+}
